@@ -11,8 +11,8 @@ pool:
   vmImage: 'Ubuntu-16.04'
 
 variables:
-  resourcegroup: 'aml-demo'
-  workspace: 'aml-demo'
+  resourcegroup: 'aml-acceleration-demo'
+  workspace: 'aml-acceleration-demo'
   aml_compute_target: 'cpu-cluster'  
   model_path: 'src/model1/'
   experiment: 'train-ci'
