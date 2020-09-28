@@ -13,7 +13,7 @@ variables:
   workspace: 'aml-acceleration-demo'
   aml_compute_target: 'cpu-cluster'
   pipeline_name: 'training-pipeline'
-  dataset: 'german-credit-dataset'
+  dataset: 'training_data'
   dataset_test: 'german-credit-ci-test' # Dataset used for testing the training pipeline
 
   # Azure Resource Manager connection created during pipeline creation
