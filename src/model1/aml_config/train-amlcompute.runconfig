@@ -21,7 +21,9 @@ data:
   mydataset:
     dataLocation:
       dataset:
-        id: 0033d0e6-7299-4402-9cc7-d6f149f2627c
+        #name: german-credit-train-tutorial
+        #version: latest
+        id: 575cd241-bbee-4305-94af-bcee90574623
     mechanism: mount
     pathOnCompute: /data
     environmentVariableName: mydataset
