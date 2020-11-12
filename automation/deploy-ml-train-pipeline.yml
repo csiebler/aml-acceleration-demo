@@ -13,6 +13,7 @@ variables:
   workspace: 'aml-acceleration-demo'
   aml_compute_target: 'cpu-cluster'
   pipeline_name: 'training-pipeline'
+  pipeline_endpoint_name: 'training-pipeline-endpoint'
   dataset: 'training_data'
   dataset_test: 'german-credit-ci-test' # Dataset used for testing the training pipeline
 
@@ -81,3 +82,12 @@ steps:
   displayName: 'Publish test results from pipeline test run'
   inputs:
     testRunTitle: 'Test results for published pipeline'
+
+- task: AzureCLI@2
+  displayName: 'Add pipeline to Pipeline Endpoint'
+  inputs:
+    azureSubscription: '$(azure_service_connection_name)'
+    scriptLocation: inlineScript
+    scriptType: bash
+    inlineScript: |
+      python pipelines-python/train/publish_to_endpoint.py --pipeline_id=$(pipeline_id) --pipeline_endpoint_name=$(pipeline_endpoint_name)
